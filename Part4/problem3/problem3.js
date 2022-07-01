@@ -1,49 +1,27 @@
 // Your Code Here
-var array = ["apel", "anggur", "lemon", "leci", "nanas"];
-function joinArrayRemoveDuplicate(arrayA) {
-  var joinArrayRemoveDuplicate = [];
+function joinArrayRemoveDuplicate(arrayA, arrayB) {
+  let isiArrayA = arrayA.slice("");
+  let isiArrayB = arrayB.slice("");
+  // gabungan array A ke array B
+  let oneArray = isiArrayA.concat(isiArrayB);
+  // console.log(oneArray);
 
-  for (var i = 0; i < arrayA.length; i++) {
-    if (joinArrayRemoveDuplicate.indexOf(arrayA[i]) === -1) {
-      joinArrayRemoveDuplicate.push(arrayA[i]);
+  // kondisi yang belom selesai
+  let arr = [];
+  for (let i = 0; i < oneArray.length; i++) {
+    if (arr.indexOf(oneArray[i]) === -1) {
+      arr.push(oneArray[i]);
     }
   }
-  return joinArrayRemoveDuplicate;
+
+  return arr;
 }
+// Test cases
+console.log(joinArrayRemoveDuplicate(["apel", "anggur"], ["lemon", "leci", "nanas"]));
+// ["apel", "anggur", "lemon", "leci", "nanas"]
 
-var array2 = ["samsung", "apple", "apple", "sony", "xiaomi"];
-function joinArrayRemoveDuplicate(arrayA) {
-  var joinArrayRemoveDuplicate = [];
+console.log(joinArrayRemoveDuplicate(["samsung", "apple"], ["apple", "sony", "xiaomi"]));
+// ["samsung", "apple", "sony", "xiaomi"]
 
-  for (var i = 0; i < arrayA.length; i++) {
-    if (joinArrayRemoveDuplicate.indexOf(arrayA[i]) === -1) {
-      joinArrayRemoveDuplicate.push(arrayA[i]);
-    }
-  }
-  return joinArrayRemoveDuplicate;
-}
-
-var array3 = (["football", "basketball"], ["basketball", "football"]);
-function joinArrayRemoveDuplicate(arrayA) {
-  var joinArrayRemoveDuplicate = [];
-
-  for (var i = 0; i < arrayA.length; i++) {
-    if (joinArrayRemoveDuplicate.indexOf(arrayA[i]) === -1) {
-      joinArrayRemoveDuplicate.push(arrayA[i]);
-    }
-  }
-  return joinArrayRemoveDuplicate;
-}
-
-var joinArrayRemove = joinArrayRemoveDuplicate(array);
-console.log(joinArrayRemove);
-var joinArrayRemove = joinArrayRemoveDuplicate(array2);
-console.log(joinArrayRemove);
-var joinArrayRemove = joinArrayRemoveDuplicate(array3);
-console.log(joinArrayRemove);
-
-// console.log(joinArrayRemoveDuplicate(["apel", "anggur"], ["lemon", "leci", "nanas"]));
-// console.log(joinArrayRemoveDuplicate(["samsung", "apple"], ["apple", "sony", "xiaomi"]));
-// console.log(joinArrayRemoveDuplicate(["football", "basketball"], ["basketball", "football"]));
-
-// module.exports = joinArrayRemoveDuplicate;
+console.log(joinArrayRemoveDuplicate(["football", "basketball"], ["basketball", "football"]));
+// [“football”, “basketball”]
